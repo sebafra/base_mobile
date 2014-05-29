@@ -11,7 +11,7 @@ window.HomeView = Backbone.View.extend({
     },
 
     events:{
-        "click #btnSucursales":"showSucursales"
+        //"click #btnSucursales":"showSucursales"
     },
 
     render:function (eventName) {

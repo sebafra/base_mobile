@@ -1,11 +1,11 @@
 window.App = {
 
 	isWebEnvironment:function(){
-		return false;
+		return true;
 	},
 
 	worksLocal:function(){
 		return true;
 	}
-    
+
 };

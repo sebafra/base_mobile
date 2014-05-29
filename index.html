@@ -7,6 +7,7 @@
 
         <script src="libs/jquery-1.10.1.min.js"></script>
         <script src="libs/jquery.animate-enhanced.js"></script>
+        <script src="libs/mobiledetection-1.0.js"></script>
 
         <link rel="stylesheet" href="libs/app-ui/viewnavigator/viewnavigator.css" type="text/css" />
         <link rel="stylesheet" href="libs/css/activityIndicator.css" type="text/css" />
@@ -14,6 +15,27 @@
         <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css" type="text/css" />
         <link rel="stylesheet" href="assets/styles.css" type="text/css" />
         <link rel="stylesheet" href="assets/ionicons.css" type="text/css" />
+        <script>
+        var deviceOs;
+        getOS();
+        //Estilos para iOS
+        if ( mobileOS === 'iOS' && Number( mobileOSver.charAt(0) ) >= 5 ) {
+            document.write("<link rel=stylesheet href=assets/styles/ios_styles.css type=text/css />");
+            deviceOs = "ios";
+        }
+        //Estilos para Android < 3.0
+        if ( mobileOS === 'Android' && Number( mobileOSver.charAt(0) ) <= 3 ) {
+            document.write("<link rel=stylesheet href=assets/styles/old_android_styles.css type=text/css />");
+            deviceOs = "oldandroid";
+        }
+         //Estilos para Android > 4.0
+        if ( mobileOS === 'Android' && Number( mobileOSver.charAt(0) ) >= 4 ) {
+            $(function () {
+                deviceOs = "android";
+            });
+        }
+    </script>
+
     </head>
 
     <body>
@@ -28,25 +50,17 @@
     <script src="libs/app-ui/viewnavigator/viewnavigator.js"></script>
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="libs/idangerous.swiper-2.1.min.js"></script>
-    <script src='libs/ws/jquery.soap.js'></script>
-	<script src='libs/ws/jquery.xml2json.js'></script>
-
-    <!-- <script src="cordova.js"></script> -->
 
     <!-- APP SCRIPTS -->
     <script src="app/App.js"></script>
     <script src="app/TemplateManager.js"></script>
     <script src="app/Constants.js"></script>
     <script src="app/views/HomeView.js"></script>
-    <script src="app/views/MessageView.js"></script>
     <script src="app/util/NativeUtil.js"></script>
     <script src="app/util/ViewNavigatorUtil.js"></script>
     <script src="app/util/JSonUtil.js"></script>
-    <script src="app/service/SucursalService.js"></script>
-    <script src="app/views/SucursalesLoadView.js"></script>
-    <script src="app/views/SucursalesView.js"></script>
-    <script src="app/views/SucursalView.js"></script>
 
     <script src="app/main.js"></script>
+
 
 </html>
