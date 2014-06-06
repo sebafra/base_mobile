@@ -11,7 +11,7 @@ window.HomeView = Backbone.View.extend({
     },
 
     events:{
-        //"click #btnSucursales":"showSucursales"
+        "click .sq7":"showMenu"
     },
 
     render:function (eventName) {
@@ -22,8 +22,8 @@ window.HomeView = Backbone.View.extend({
         return this;
     },
 
-    showSucursales:function () {
-        var view = new SucursalesLoadView();
+    showMenu:function () {
+        var view = new MenuView();
         ViewNavigatorUtil.pushView( view );
     }
 

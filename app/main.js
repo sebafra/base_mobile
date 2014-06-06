@@ -13,6 +13,7 @@ function onDeviceReady() {
 	$.ajaxSetup({ cache: false });
 
 	loadTemplates( appTemplatesLoaded );
+    //loadConstants();
 
 }
 
@@ -34,6 +35,12 @@ function onBackKey( event ) {
         return false;
     }
     navigator.app.exitApp();
+}
+function loadConstants() {
+    setTimeout(function(){
+        $("#urlWeb").html(URL_WEB);
+        $("#urlFacebook").html(URL_FACEBOOK);
+    }, 1000);
 }
 
 

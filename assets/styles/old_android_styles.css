@@ -2,22 +2,6 @@
 html, body {
 	-webkit-transform: none;
 }
-select {
-	position: relative; z-index: 999;
-}
-.dropdown-backdrop {
-	position: static;
-}
 
 
-/***********************/
-/******* Home View *****/
-/***********************/
-
-#homeView {
-	position: static;
-}
-#homeView .container {
-	position: static;
-}
 
